@@ -22,7 +22,14 @@ public class Product {
         return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public void setName(String name) {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede ser nulo o vacío.");
+        }
         this.name = name;
     }
     public String getName() {
@@ -31,6 +38,7 @@ public class Product {
 
     public void setPrice(double price) {
         if (price < 0) {
+            this.price = 0.0;
             throw new IllegalArgumentException("El precio no puede ser negativo. Se ha establecido a 0.0.");
         }
         else {
@@ -44,6 +52,7 @@ public class Product {
 
     public void setStock(int stock) {
         if (stock < 0) {
+            this.stock = 0;
             throw new IllegalArgumentException("El stock no puede ser negativo. Se ha establecido a 0.");
         }
         else {
