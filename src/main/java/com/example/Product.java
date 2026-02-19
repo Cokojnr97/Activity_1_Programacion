@@ -15,7 +15,7 @@ public class Product {
     }
 
     public Product() {
-        this("null", "null", 0.0, 0);
+        this(null, null, 0.0, 0);
     } 
 
     public String getId() {
@@ -31,8 +31,7 @@ public class Product {
 
     public void setPrice(double price) {
         if (price < 0) {
-            System.out.println("El precio no puede ser negativo. Se ha establecido a 0.0.");
-            this.price = 0.0;
+            throw new IllegalArgumentException("El precio no puede ser negativo. Se ha establecido a 0.0.");
         }
         else {
             this.price = price;
@@ -45,8 +44,7 @@ public class Product {
 
     public void setStock(int stock) {
         if (stock < 0) {
-            System.out.println("El stock no puede ser negativo. Se ha establecido a 0.");
-            this.stock = 0;
+            throw new IllegalArgumentException("El stock no puede ser negativo. Se ha establecido a 0.");
         }
         else {
             this.stock = stock;

@@ -19,10 +19,6 @@ public class Main {
         System.out.println("Nombre actualizado de producto3: " + producto3.getName());
         System.out.println("Producto 4:");
         Product producto4 = new Product();
-        producto4.getId();
-        producto4.getName();
-        producto4.getPrice();
-        producto4.getStock();
         System.out.println("Producto4 - ID: " + producto4.getId() + ", Name: " + producto4.getName() + ", Price: " + producto4.getPrice() + ", Stock: " + producto4.getStock());
 
         System.out.println("Detalles de los productos:");
