@@ -44,24 +44,31 @@ actividad1/
 
 ### Métodos
 - **Getters**: `getId()`, `getName()`, `getPrice()`, `getStock()`
-- **Setters**: `setName()`, `setPrice()`, `setStock()`
-  - ⚠️ **Validaciones**: Los setters de `price` y `stock` validan que no se ingresen valores negativos
+- **Setters**: `setId()`, `setName()`, `setPrice()`, `setStock()`
+  - ⚠️ **Validaciones**: 
+    - `setName()`: Valida que no sea nulo o vacio
+    - `setPrice()`: Valida que el precio no sea negativo
+    - `setStock()`: Valida que el stock no sea negativo
 - **toString()**: Retorna una representación formateada del producto
 
 ### Validaciones Implementadas
-- Si el precio es negativo, se establece automáticamente en 0.0
-- Si el stock es negativo, se establece automáticamente en 0
+- `setName()`: Lanza `IllegalArgumentException` si el nombre es nulo o vacío
+- `setPrice()`: Lanza `IllegalArgumentException` si el precio es negativo
+- `setStock()`: Lanza `IllegalArgumentException` si el stock es negativo
 
 ## 🚀 Funcionalidad de Main
 
 La clase `Main` demuestra las siguientes operaciones:
 
 1. **Creación de productos** con el constructor parametrizado
-2. **Actualización de precio** usando `setPrice()`
-3. **Actualización de stock** usando `setStock()`
-4. **Actualización de nombre** usando `setName()`
+2. **Actualización de precio** usando `setPrice()` con manejo de excepciones
+3. **Actualización de stock** usando `setStock()` con manejo de excepciones
+4. **Actualización de nombre** usando `setName()` con manejo de excepciones
 5. **Creación de producto vacío** con constructor por defecto
 6. **Visualización de información** mediante `toString()`
+
+### Manejo de Excepciones
+Todos los setters en `Main` están envueltos en bloques `try-catch` para capturar cualquier `IllegalArgumentException` y mostrar mensajes de error apropiados sin interrumpir la ejecución del programa.
 
 ### Ejemplo de Salida
 
@@ -134,9 +141,10 @@ java -cp target/classes com.example.Main
 
 - **Encapsulamiento**: Atributos privados con acceso controlado mediante getters/setters
 - **Constructores**: Diferentes formas de inicializar objetos
-- **Validación de datos**: Control de valores en setters
+- **Validación de datos**: Control de valores en setters con lanzamiento de excepciones
 - **Sobrescritura de métodos**: Implementación personalizada de `toString()`
-- **Inmutabilidad parcial**: El ID solo puede establecerse en el constructor
+- **Manejo de excepciones**: Try-catch para capturar y manejar errores de validación
+- **Consistencia de API**: Todos los campos tienen setters correspondientes
 
 ## 📝 Autor
 
