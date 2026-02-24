@@ -32,6 +32,13 @@ public class Main {
         System.out.println("Producto 4:");
         Product producto4 = new Product();
         System.out.println("Producto4 - ID: " + producto4.getId() + ", Name: " + producto4.getName() + ", Price: " + producto4.getPrice() + ", Stock: " + producto4.getStock());
+        try {
+            producto4.setId("004");
+            System.out.println("ID actualizado de producto4: " + producto4.getId());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error al actualizar ID: " + e.getMessage());
+        }
+        
 
         System.out.println("Detalles de los productos:");
         System.out.println(producto1.toString());

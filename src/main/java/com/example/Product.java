@@ -15,8 +15,8 @@ public class Product {
     }
 
     public Product() {
-        this(null, null, 0.0, 0);
-    } 
+    this("id-por-defecto", "producto-sin-nombre", 0.0, 0);
+}
 
     public String getId() {
         return id;
@@ -38,13 +38,12 @@ public class Product {
 
     public void setPrice(double price) {
         if (price < 0) {
-            this.price = 0.0;
-            throw new IllegalArgumentException("El precio no puede ser negativo. Se ha establecido a 0.0.");
-        }
-        else {
+            this.price = 0.0;  
+        } else {
             this.price = price;
         }
     }
+
 
     public double getPrice() {
         return price;
@@ -53,12 +52,11 @@ public class Product {
     public void setStock(int stock) {
         if (stock < 0) {
             this.stock = 0;
-            throw new IllegalArgumentException("El stock no puede ser negativo. Se ha establecido a 0.");
-        }
-        else {
+        } else {
             this.stock = stock;
         }
     }
+
 
     public int getStock() {
         return stock;
